@@ -4,7 +4,7 @@ explorer_install ()
 {
     ascii
 
-    heading "Installing ARK Explorer..."
+    heading "Installing PHANTOM Explorer..."
 
     sudo mkdir "$EXPLORER_DIR" >> "$commander_log" 2>&1
     sudo chown "$USER":"$USER" "$EXPLORER_DIR" >> "$commander_log" 2>&1
@@ -20,7 +20,7 @@ explorer_install ()
     yarn build:"$CORE_NETWORK" | tee -a "$commander_log"
     success "Building!"
 
-    success "Installed ARK Explorer!"
+    success "Installed PHANTOM Explorer!"
 }
 
 explorer_uninstall ()
@@ -29,11 +29,11 @@ explorer_uninstall ()
 
     explorer_stop
 
-    heading "Uninstalling ARK Explorer..."
+    heading "Uninstalling PHANTOM Explorer..."
 
     sudo rm -rf "$EXPLORER_DIR"
 
-    success "Uninstalled ARK Explorer!"
+    success "Uninstalled PHANTOM Explorer!"
 }
 
 explorer_update ()
@@ -51,11 +51,11 @@ explorer_update ()
     if [[ "$remote_version" == "$local_version" ]]; then
         STATUS_EXPLORER_UPDATE="No"
 
-        info "You already have the latest ARK Explorer version that we support."
+        info "You already have the latest PHANTOM Explorer version that we support."
     else
         STATUS_EXPLORER_UPDATE="Yes"
 
-        read -p "An update is available for ARK Explorer, do you want to install it? [Y/n] : " choice
+        read -p "An update is available for PHANTOM Explorer, do you want to install it? [Y/n] : " choice
 
         if [[ -z "$choice" || "$choice" =~ ^(yes|y|Y) ]]; then
             explorer_stop
@@ -78,7 +78,7 @@ explorer_start ()
 
     heading "Starting Explorer..."
 
-    EXPLORER_HOST="0.0.0.0" EXPLORER_PORT=4200 pm2 start "$EXPLORER_DIR/express-server.js" --name ark-explorer >> "$commander_log" 2>&1
+    EXPLORER_HOST="0.0.0.0" EXPLORER_PORT=4200 pm2 start "$EXPLORER_DIR/express-server.js" --name phantom-explorer >> "$commander_log" 2>&1
 
     success "Started Explorer!"
 }
@@ -89,7 +89,7 @@ explorer_restart ()
 
     heading "Restarting Explorer..."
 
-    pm2 restart ark-explorer >> "$commander_log" 2>&1
+    pm2 restart phantom-explorer >> "$commander_log" 2>&1
 
     success "Restarted Explorer!"
 }
@@ -100,7 +100,7 @@ explorer_stop ()
 
     heading "Stopping Explorer..."
 
-    pm2 stop ark-explorer >> "$commander_log" 2>&1
+    pm2 stop phantom-explorer >> "$commander_log" 2>&1
 
     success "Stopped Explorer!"
 }
@@ -111,12 +111,12 @@ explorer_logs ()
     echo -e "\n$(text_yellow " Use Ctrl+C to return to menu")\n"
     trap : INT
 
-    pm2 logs ark-explorer
+    pm2 logs phantom-explorer
 }
 
 explorer_status ()
 {
-    local status=$(pm2status "ark-explorer" | awk '{print $10}')
+    local status=$(pm2status "phantom-explorer" | awk '{print $10}')
 
     if [[ "$status" == "online" ]]; then
         STATUS_EXPLORER="On"

@@ -6,99 +6,99 @@ core_configure_hosts_and_ports ()
 
     . "$envFile"
 
-    # @arkecosystem/core-p2p
+    # @phantomcore/core-p2p
     read -p "Would you like to configure the P2P API? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the P2P API host, or press ENTER for the default [${ARK_P2P_HOST}]: " inputHost
-        read -p "Enter the P2P API port, or press ENTER for the default [${ARK_P2P_PORT}]: " inputPort
+        read -p "Enter the P2P API host, or press ENTER for the default [${PHANTOM_P2P_HOST}]: " inputHost
+        read -p "Enter the P2P API port, or press ENTER for the default [${PHANTOM_P2P_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_P2P_HOST=$ARK_P2P_HOST/ARK_P2P_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_P2P_HOST=$PHANTOM_P2P_HOST/PHANTOM_P2P_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_P2P_PORT=$ARK_P2P_PORT/ARK_P2P_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_P2P_PORT=$PHANTOM_P2P_PORT/PHANTOM_P2P_PORT=$inputPort/g" "$envFile"
         fi
     fi
 
-    # @arkecosystem/core-api
+    # @phantomcore/core-api
     read -p "Would you like to configure the Public API? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the Public API host, or press ENTER for the default [${ARK_API_HOST}]: " inputHost
-        read -p "Enter the Public API port, or press ENTER for the default [${ARK_API_PORT}]: " inputPort
+        read -p "Enter the Public API host, or press ENTER for the default [${PHANTOM_API_HOST}]: " inputHost
+        read -p "Enter the Public API port, or press ENTER for the default [${PHANTOM_API_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_API_HOST=$ARK_API_HOST/ARK_API_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_API_HOST=$PHANTOM_API_HOST/PHANTOM_API_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_API_PORT=$ARK_API_PORT/ARK_API_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_API_PORT=$PHANTOM_API_PORT/PHANTOM_API_PORT=$inputPort/g" "$envFile"
         fi
     fi
 
-    # @arkecosystem/core-webhooks
+    # @phantomcore/core-webhooks
     read -p "Would you like to configure the Webhooks API? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the Webhooks API host, or press ENTER for the default [${ARK_WEBHOOKS_HOST}]: " inputHost
-        read -p "Enter the Webhooks API port, or press ENTER for the default [${ARK_WEBHOOKS_PORT}]: " inputPort
+        read -p "Enter the Webhooks API host, or press ENTER for the default [${PHANTOM_WEBHOOKS_HOST}]: " inputHost
+        read -p "Enter the Webhooks API port, or press ENTER for the default [${PHANTOM_WEBHOOKS_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_WEBHOOKS_HOST=$ARK_WEBHOOKS_HOST/ARK_WEBHOOKS_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_WEBHOOKS_HOST=$PHANTOM_WEBHOOKS_HOST/PHANTOM_WEBHOOKS_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_WEBHOOKS_PORT=$ARK_WEBHOOKS_PORT/ARK_WEBHOOKS_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_WEBHOOKS_PORT=$PHANTOM_WEBHOOKS_PORT/PHANTOM_WEBHOOKS_PORT=$inputPort/g" "$envFile"
         fi
     fi
 
-    # @arkecosystem/core-graphql
+    # @phantomcore/core-graphql
     read -p "Would you like to configure the GraphQL API? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the GraphQL API host, or press ENTER for the default [${ARK_GRAPHQL_HOST}]: " inputHost
-        read -p "Enter the GraphQL API port, or press ENTER for the default [${ARK_GRAPHQL_PORT}]: " inputPort
+        read -p "Enter the GraphQL API host, or press ENTER for the default [${PHANTOM_GRAPHQL_HOST}]: " inputHost
+        read -p "Enter the GraphQL API port, or press ENTER for the default [${PHANTOM_GRAPHQL_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_GRAPHQL_HOST=$ARK_GRAPHQL_HOST/ARK_GRAPHQL_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_GRAPHQL_HOST=$PHANTOM_GRAPHQL_HOST/PHANTOM_GRAPHQL_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_GRAPHQL_PORT=$ARK_GRAPHQL_PORT/ARK_GRAPHQL_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_GRAPHQL_PORT=$PHANTOM_GRAPHQL_PORT/PHANTOM_GRAPHQL_PORT=$inputPort/g" "$envFile"
         fi
     fi
 
-    # @arkecosystem/core-json-rpc
+    # @phantomcore/core-json-rpc
     read -p "Would you like to configure the JSON-RPC API? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the JSON-RPC host, or press ENTER for the default [${ARK_JSONRPC_HOST}]: " inputHost
-        read -p "Enter the JSON-RPC port, or press ENTER for the default [${ARK_JSONRPC_PORT}]: " inputPort
+        read -p "Enter the JSON-RPC host, or press ENTER for the default [${PHANTOM_JSONRPC_HOST}]: " inputHost
+        read -p "Enter the JSON-RPC port, or press ENTER for the default [${PHANTOM_JSONRPC_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_JSONRPC_HOST=$ARK_JSONRPC_HOST/ARK_JSONRPC_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_JSONRPC_HOST=$PHANTOM_JSONRPC_HOST/PHANTOM_JSONRPC_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_JSONRPC_PORT=$ARK_JSONRPC_PORT/ARK_JSONRPC_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_JSONRPC_PORT=$PHANTOM_JSONRPC_PORT/PHANTOM_JSONRPC_PORT=$inputPort/g" "$envFile"
         fi
     fi
 
-    # @arkecosystem/core-*
+    # @phantomcore/core-*
     read -p "Would you like to configure redis? [y/N] : " choice
 
     if [[ "$choice" =~ ^(yes|y|Y) ]]; then
-        read -p "Enter the Redis host, or press ENTER for the default [${ARK_REDIS_HOST}]: " inputHost
-        read -p "Enter the Redis port, or press ENTER for the default [${ARK_REDIS_PORT}]: " inputPort
+        read -p "Enter the Redis host, or press ENTER for the default [${PHANTOM_REDIS_HOST}]: " inputHost
+        read -p "Enter the Redis port, or press ENTER for the default [${PHANTOM_REDIS_PORT}]: " inputPort
 
         if [[ ! -z "$inputHost" ]]; then
-            sed -i -e "s/ARK_REDIS_HOST=$ARK_REDIS_HOST/ARK_REDIS_HOST=$inputHost/g" "$envFile"
+            sed -i -e "s/PHANTOM_REDIS_HOST=$PHANTOM_REDIS_HOST/PHANTOM_REDIS_HOST=$inputHost/g" "$envFile"
         fi
 
         if [[ ! -z "$inputPort" ]]; then
-            sed -i -e "s/ARK_REDIS_PORT=$ARK_REDIS_PORT/ARK_REDIS_PORT=$inputPort/g" "$envFile"
+            sed -i -e "s/PHANTOM_REDIS_PORT=$PHANTOM_REDIS_PORT/PHANTOM_REDIS_PORT=$inputPort/g" "$envFile"
         fi
     fi
 }

@@ -5,11 +5,11 @@ menu_manage_forger_help ()
     ascii
 
     text_yellow "    Stop Forger (K)"
-    text_white "    stops the ARK forger node process (shown only if the forger node is running)."
+    text_white "    stops the PHANTOM forger node process (shown only if the forger node is running)."
     echo
 
     text_yellow "    Start Forger (S)"
-    text_white "    starts the ARK forger node process (shown only if the forger node is not running)."
+    text_white "    starts the PHANTOM forger node process (shown only if the forger node is not running)."
     echo
 
     text_yellow "    Restart Forger (R)"
@@ -29,7 +29,7 @@ menu_manage_forger_help ()
 
     divider
 
-    text_blue "    For more information head on over to https://docs.ark.io/"
+    text_blue "    For more information head on over to https://docs.phantom.io/"
     echo
 
     press_to_continue

@@ -9,7 +9,7 @@ menu_manage_commander_help ()
     echo
 
     text_yellow "    Configure Core Directory (A)"
-    text_white "    lets you configure the directory core is installed into when you select Install ARK Core (you can change this before you start the core installation)."
+    text_white "    lets you configure the directory core is installed into when you select Install PHANTOM Core (you can change this before you start the core installation)."
     echo
 
     text_yellow "    Configure Core Data Directory (D)"
@@ -21,7 +21,7 @@ menu_manage_commander_help ()
     echo
 
     text_yellow "    Configure Token (T)"
-    text_white "    lets you configure a different custom token (ARK by default)."
+    text_white "    lets you configure a different custom token (PHANTOM by default)."
     echo
 
     text_yellow "    Configure Token Network (N)"
@@ -33,7 +33,7 @@ menu_manage_commander_help ()
     echo
 
     text_yellow "    Configure Explorer Directory (E)"
-    text_white "    lets you configure the directory where the Explorer is installed into when you do an ARK Explorer installation (you can change this before you start the explorer installation)."
+    text_white "    lets you configure the directory where the Explorer is installed into when you do an PHANTOM Explorer installation (you can change this before you start the explorer installation)."
     echo
 
     text_yellow "    Show Help (H)"
@@ -41,7 +41,7 @@ menu_manage_commander_help ()
 
     divider
 
-    text_blue "    For more information head on over to https://docs.ark.io/"
+    text_blue "    For more information head on over to https://docs.phantom.io/"
     echo
 
     press_to_continue

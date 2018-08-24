@@ -3,16 +3,16 @@
 setup_environment_file ()
 {
     if [[ ! -e "${CORE_DATA}/.env" ]]; then
-        mkdir "${HOME}/.ark"
+        mkdir "${HOME}/.phantom"
         local envFile="${CORE_DATA}/.env"
         touch "$envFile"
 
-        echo "ARK_LOG_LEVEL=debug" >> "$envFile" 2>&1
+        echo "PHANTOM_LOG_LEVEL=debug" >> "$envFile" 2>&1
 
-        echo "ARK_DB_HOST=localhost" >> "$envFile" 2>&1
-        echo "ARK_DB_USERNAME=ark" >> "$envFile" 2>&1
-        echo "ARK_DB_PASSWORD=password" >> "$envFile" 2>&1
-        echo "ARK_DB_DATABASE=ark_devnet" >> "$envFile" 2>&1
+        echo "PHANTOM_DB_HOST=localhost" >> "$envFile" 2>&1
+        echo "PHANTOM_DB_USERNAME=phantom" >> "$envFile" 2>&1
+        echo "PHANTOM_DB_PASSWORD=password" >> "$envFile" 2>&1
+        echo "PHANTOM_DB_DATABASE=phantom_devnet" >> "$envFile" 2>&1
     fi
 
     . "${CORE_DATA}/.env"
@@ -33,18 +33,18 @@ setup_environment ()
         # create ~/.commander
         touch "$commander_config"
 
-        echo "CORE_REPO=https://github.com/ArkEcosystem/core" >> "$commander_config" 2>&1
-        echo "CORE_DIR=${HOME}/ark-core" >> "$commander_config" 2>&1
-        echo "CORE_DATA=${HOME}/.ark" >> "$commander_config" 2>&1
-        echo "CORE_CONFIG=${HOME}/.ark/config" >> "$commander_config" 2>&1
-        echo "CORE_TOKEN=ark" >> "$commander_config" 2>&1
+        echo "CORE_REPO=https://github.com/PhantomCore/core" >> "$commander_config" 2>&1
+        echo "CORE_DIR=${HOME}/phantom-core" >> "$commander_config" 2>&1
+        echo "CORE_DATA=${HOME}/.phantom" >> "$commander_config" 2>&1
+        echo "CORE_CONFIG=${HOME}/.phantom/config" >> "$commander_config" 2>&1
+        echo "CORE_TOKEN=phantom" >> "$commander_config" 2>&1
         echo "CORE_NETWORK=devnet" >> "$commander_config" 2>&1
-        echo "EXPLORER_REPO=https://github.com/ArkEcosystem/explorer" >> "$commander_config" 2>&1
-        echo "EXPLORER_DIR=${HOME}/ark-explorer" >> "$commander_config" 2>&1
+        echo "EXPLORER_REPO=https://github.com/PhantomCore/explorer" >> "$commander_config" 2>&1
+        echo "EXPLORER_DIR=${HOME}/phantom-explorer" >> "$commander_config" 2>&1
 
         . "$commander_config"
 
-        # create ~/.ark/.env
+        # create ~/.phantom/.env
         setup_environment_file
         success "All system dependencies have been installed!"
 

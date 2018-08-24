@@ -25,7 +25,7 @@ forger_restart ()
 
     heading "Restarting Forger..."
 
-    pm2 restart ark-core-forger >> "$commander_log" 2>&1
+    pm2 restart phantom-core-forger >> "$commander_log" 2>&1
 
     forger_status
 
@@ -38,7 +38,7 @@ forger_stop ()
 
     heading "Stopping Forger..."
 
-    pm2 stop ark-core-forger >> "$commander_log" 2>&1
+    pm2 stop phantom-core-forger >> "$commander_log" 2>&1
 
     forger_status
 
@@ -49,11 +49,11 @@ forger_delete ()
 {
     ascii
 
-    local delete_forger=$(pm2status "ark-core-forger" | awk '{print $2}')
+    local delete_forger=$(pm2status "phantom-core-forger" | awk '{print $2}')
     if [[ -n $delete_forger ]]; then
         heading "Deleting Forger..."
 
-        pm2 delete ark-core-forger >> "$commander_log" 2>&1
+        pm2 delete phantom-core-forger >> "$commander_log" 2>&1
 
         forger_status
 
@@ -67,12 +67,12 @@ forger_logs ()
     echo -e "\n$(text_yellow " Use Ctrl+C to return to menu")\n"
     trap : INT
 
-    pm2 logs ark-core-forger
+    pm2 logs phantom-core-forger
 }
 
 forger_status ()
 {
-    local status=$(pm2status "ark-core-forger" | awk '{print $10}')
+    local status=$(pm2status "phantom-core-forger" | awk '{print $10}')
 
     if [[ "$status" == "online" ]]; then
         STATUS_FORGER="On"
@@ -99,7 +99,7 @@ __forger_configure_plain ()
     read -sp "Please enter your delegate secret: " inputSecret
     echo
 
-    $(node "$CORE_DIR/packages/core/bin/ark" forger-plain --config "$CORE_CONFIG" --secret "$inputSecret")
+    $(node "$CORE_DIR/packages/core/bin/phantom" forger-plain --config "$CORE_CONFIG" --secret "$inputSecret")
 
     local status=$?
 
@@ -123,7 +123,7 @@ __forger_configure_bip38 ()
 
     warning "Hang in there while we encrypt your secret..."
 
-    $(node "$CORE_DIR/packages/core/bin/ark" forger-bip38 --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" --secret "$inputSecret" --password "$inputBip38")
+    $(node "$CORE_DIR/packages/core/bin/phantom" forger-bip38 --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" --secret "$inputSecret" --password "$inputBip38")
 
     local status=$?
 
@@ -144,10 +144,10 @@ __forger_start_with_bip38 ()
 
     read -sp "Please enter your bip38 password: " password
 
-    pm2 start "$CORE_DIR/packages/core/bin/ark" --name ark-core-forger -- forger --data "$CORE_DATA" --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" --bip38 "$bip38" --password "$password" >> "$commander_log" 2>&1
+    pm2 start "$CORE_DIR/packages/core/bin/phantom" --name phantom-core-forger -- forger --data "$CORE_DATA" --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" --bip38 "$bip38" --password "$password" >> "$commander_log" 2>&1
 }
 
 __forger_start_without_bip38 ()
 {
-    pm2 start "$CORE_DIR/packages/core/bin/ark" --name ark-core-forger -- forger --data "$CORE_DATA" --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" >> "$commander_log" 2>&1
+    pm2 start "$CORE_DIR/packages/core/bin/phantom" --name phantom-core-forger -- forger --data "$CORE_DATA" --config "$CORE_CONFIG" --token "$CORE_TOKEN" --network "$CORE_NETWORK" >> "$commander_log" 2>&1
 }

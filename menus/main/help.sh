@@ -4,28 +4,28 @@ menu_main_help ()
 {
     ascii
 
-    text_yellow "    Install ARK Core (I)"
-    text_white "    starts the ARK core intall process."
+    text_yellow "    Install PHANTOM Core (I)"
+    text_white "    starts the PHANTOM core intall process."
     echo
 
-    text_yellow "    Manage ARK Core (A)"
-    text_white "    opens the ARK core options."
+    text_yellow "    Manage PHANTOM Core (A)"
+    text_white "    opens the PHANTOM core options."
     echo
 
     text_yellow "    Manage Relay (R)"
-    text_white "    opens the ARK relay node process options."
+    text_white "    opens the PHANTOM relay node process options."
     echo
 
     text_yellow "    Manage Forger (F)"
-    text_white "    opens the ARK forger node process options."
+    text_white "    opens the PHANTOM forger node process options."
     echo
 
     text_yellow "    Manage Explorer (E)"
-    text_white "    opens the ARK explorer options."
+    text_white "    opens the PHANTOM explorer options."
     echo
 
     text_yellow "    Manage Commander (C)"
-    text_white "    opens the ARK commander options."
+    text_white "    opens the PHANTOM commander options."
     echo
 
     text_yellow "    Miscellaneous (M)"
@@ -33,7 +33,7 @@ menu_main_help ()
     echo
 
     text_yellow "    Show Logs (L)"
-    text_white "    opens the Ark core logs so you can see what is going on with your node process in real-time."
+    text_white "    opens the Phantom core logs so you can see what is going on with your node process in real-time."
     echo
 
     text_yellow "    Show Process Monitor (P)"
@@ -45,11 +45,11 @@ menu_main_help ()
     echo
 
     text_yellow "    X — Exit"
-    text_white "    exits ARK Commander"
+    text_white "    exits PHANTOM Commander"
 
     divider
 
-    text_blue "    For more information head on over to https://docs.ark.io/"
+    text_blue "    For more information head on over to https://docs.phantom.io/"
     echo
 
     press_to_continue
