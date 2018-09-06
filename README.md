@@ -9,6 +9,8 @@
 ## Installation
 
 ```bash
+adduser phantom
+usermod -a -G sudo phantom
 git clone https://github.com/PhantomCore/core-commander
 cd core-commander
 bash commander.sh
